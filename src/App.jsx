@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [price, setPrice] = useState(100);
+  console.log(price);
+  function updatePriceHandle() {
+    setPrice(75);
+  }
   return (
     <div>
-      <p data-testid="price">$100</p>
-      <button>Apply Discount</button>
+      <p data-testid="price">${price}</p>
+      <button onClick={updatePriceHandle}>Apply Discount</button>
     </div>
   );
 }
